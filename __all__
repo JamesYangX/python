@@ -1,0 +1,28 @@
+# import *를 했을 때 특정한 함수만 되도록 하기 위해서는
+# 해당 파일에서 __all__ = ['함수', '함수']
+# import <package>를 하면 패키지의 각 모듈에 있는 함수가 호출되지 않음.
+# 호출되게 하기 위해서는 __init__.py에 __all__ = ['모듈', '모듈'] 을 해주고 함수에서 import <package>하면 됨
+
+import cil
+
+logo = cil.read_image('codeit_logo')
+text = cil.read_image('codeit_text')
+
+print('코드잇 로고:')
+# logo를 디스플래이해 주세요
+cil.display(logo)
+print('\n코드잇 텍스트:')
+# text를 디스플래이해 주세요
+cil.display(text)
+
+# text를 색상 반전해서 inverted_text에 저장해 주세요
+inverted_text = cil.invert(text)
+# logo와 text를 합성한 이미지를 merged_img에 저장해 주세요
+merged_img = cil.merge(logo, text)
+
+print('\n색상 반전 텍스트:')
+# inverted_text를 디스플래이해 주세요
+cil.display(inverted_text)
+print('\n합성 이미지:')
+# merged_img를 디스플래이해 주세요
+cil.display(merged_img)
