@@ -20,11 +20,14 @@ class User:
     @classmethod
     def from_string(cls, string_params):
         params_list = string_params.split(",")
+        
         name = params_list[0]
         email = params_list[1]
         password = params_list[2]
         
-        return cls(name, email, password)
+        return cls(name, email, password) #  ★★ 요 부분을 잘 봐야할듯, 아래 younghoon.name으로 갖다 쓰는게 잘 이해는 안됨 ★★
+                                          #  ★★ 아마도 self.name = name에서 원래 메소드 변수(?)를 썼으면 user1 같은 변수를 만든다음에 user1.name 처럼 써야하는걸 user1을 만들지 않고 ★★
+                                          #  ★★ 바로 classmethod를 사용해서 younghoon.name = params_list[0] 이렇게 되는 것 같음 ★★
  
     
     @classmethod
@@ -33,7 +36,7 @@ class User:
         email = list_params[1]
         password = list_params[2]
         
-        return cls(name, email. password)
+        return cls(name, email, password)
 
 # 유저 생성 및 초기값 설정
 younghoon = User.from_string("강영훈,younghoon@codeit.kr,123456")
