@@ -1,0 +1,11 @@
+class User:
+  def initialize(self, name, email, password):
+    self.name = name
+    self.email = email
+    self.password = password
+    
+# 메소드를 통해 인스턴스를 호출
+user1.initialize("james", "james@james.co.kr", "12345")
+
+# 클래스를 통해 인스턴스 호출
+User.initialize(user1, "james", "james@james.co.kr", "12345")
